@@ -419,7 +419,7 @@ nav a#pull {
 	color: #202020;
 	font-weight: 700;
 	text-transform: uppercase;
-	font-size: 1.2em;
+	font-size: 13px;
 }
 .feature-grid h3 span{
 	width: 26px;
@@ -428,6 +428,7 @@ nav a#pull {
 	background: url(../images/fea-icons.png) no-repeat 1px 0px;
 	vertical-align: top;
 	margin-right: 0.5em;
+	font-size: 11px;   
 }
 .feature-grid p{
 	color:#777777;
@@ -666,11 +667,12 @@ span.default_line {
 .t-member-info h5{
 	color: #202020;
 	font-weight: 700;
-	font-size: 1.1em;
+	font-size: 13px;
 	text-transform: uppercase;
 	margin: 0;
 }
 .t-member-info span{
+	font-size: 11px;
 	text-transform:uppercase;
 	color:#BBBBBB;
 }
