@@ -956,7 +956,7 @@ ul.footer-menu li a:hover {color: #d14343;
 	font-size: 12px;
 	padding: 0.8em 2.8em 0.8em 1em;
 	text-transform: uppercase;
-	background: url(../images/submit_arrow.png)no-repeat 166px 8px #E25050;
+	background: url(../images/submit_arrow.png)no-repeat 179px 8px #E25050;
 	display: inline-block;
 	-webkit-transition: all 0.3s ease-out;
 	-moz-transition: all 0.3s ease-out;
@@ -968,7 +968,7 @@ ul.footer-menu li a:hover {color: #d14343;
 	cursor: pointer;
 }
 .form-submit1 input[type="submit"]:hover {
- 	background: url(../images/submit_arrow.png)no-repeat 166px 8px #333;
+ 	background: url(../images/submit_arrow.png)no-repeat 179px 8px #333;
 }
 .text input[type="text"], .contact_bottom-textarea textarea {
 	width:100%;
