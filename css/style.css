@@ -954,7 +954,7 @@ ul.footer-menu li a:hover {color: #d14343;
 .form-submit1 input[type="submit"] {
 	color: #FFF;
 	font-size: 12px;
-	padding: 0.8em 4.8em 0.8em 2em;
+	padding: 0.8em 2.8em 0.8em 1em;
 	text-transform: uppercase;
 	background: url(../images/submit_arrow.png)no-repeat 186px 13px #E25050;
 	display: inline-block;
