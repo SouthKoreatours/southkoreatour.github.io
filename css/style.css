@@ -174,11 +174,22 @@ nav a#pull {
    padding-bottom:10px;
 }
 
-.otzyv-stile p span {
+.otzyv-stile p span, .otzyv-stile span {
    color:#3670b8;
    font-weight: bold;
 }
+.otzyv-stile img {
+   margin:10px;
+   float:left;
+  box-shadow: 0 0 16px rgba(0,0,0,0.6);
+}
+.tury-style {
+   float:left;   
+}
 
+.clear-txt {
+      clear: both;
+}
 /*----slider----*/
 #slider2,
 #slider3 {
