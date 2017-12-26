@@ -16,7 +16,7 @@
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" type="text/css" href="css/component.css" />
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
@@ -533,21 +533,52 @@ $(window).load(function() {
       		 <div class="col-md-8 contact-top">
 			  <h3>Форма обратной связи</h3>
 
+ <form id="myform">
+<label>Email</label>
+<input type="text" name="reply_to" value="" />
+<label>Имя</label>
+<input type="text" name="to_name" value="" />
+<label>Тема сообщения</label>
+<input type="text" name="from_name" value="" />
+<label>Текст сообщения</label>
+<input type="text" name="message_html" value="" />
+<br><br>
+<button>
+Отправить сообщение
+</button>
+</form>
 
-					<div class="to">
-                  <input id="fname" name="fname" type="text" class="text" value="Имя" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Имя';}">
-					 	<input id="email" name="email" type="text" class="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" style="margin-left:20px">
-					 	<input id="subject" name="subject" type="text" class="text" value="Тема сообщения" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Тема сообщения';}" style="margin-left:20px">
-					</div>
-					<div class="contact_bottom-textarea">
-	    <textarea name="ftext" value="Текст сообщения" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Текст сообщения';}">Текст сообщения</textarea>
-	                </div>
-	                <div class="form-submit1">
-			           <input name="submit" type="submit" id="submit" value="Отправить сообщение"><br>
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("user_zEY9uMYaJSfSAWbksDa23");
+   })();
+   
+   var myform = $("form#myform");
+myform.submit(function(event){
+	event.preventDefault();
 
-					</div>
-					<div class="clear"></div>
+	var params = myform.serializeArray().reduce(function(obj, item) {
+     obj[item.name] = item.value;
+     return obj;
+  }, {});
 
+  // Change to your service ID, or keep using the default service
+  var service_id = "default_service";
+
+  var template_id = "template_9bK2QFHh";
+  myform.find("button").text("Отправка...");
+  emailjs.send(service_id,template_id,params)
+  	.then(function(){ 
+       alert("Сообщение отправлено!");
+       myform.find("button").text("Send");
+     }, function(err) {
+       alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
+       myform.find("button").text("Send");
+    });
+  return false;
+});
+</script>
 
              </div>
             </div>
