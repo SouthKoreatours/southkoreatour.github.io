@@ -57,7 +57,37 @@ $(document).ready(function(){
         
 
         if (FLAG == 0){                                                                   
-           form.submit();
+           
+           
+           $.ajax({ 
+             type: “POST”,
+             url: “https://mandrillapp.com/api/1.0/messages/send.json”,
+              data: {
+              ‘key’: ‘c7002fc8c731a013934a4f84c5e0d302-us17’,
+              ‘message’: {
+              ‘from_email’: ‘SouthKoreatours@ya.ru’,
+               ‘to’: [
+                    {
+                        ‘email’: ‘SouthKoreatours@ya.ru’,
+                        ‘name’: ‘Ekaterina’,
+                        ‘type’: ‘to’
+          },
+          {
+            ‘email’: ‘sitecode@ya.ru’,
+            ‘name’: ‘ANOTHER’,
+            ‘type’: ‘to’
+          }
+        ],
+      ‘autotext’: ‘true’,
+      ‘subject’: ‘Посложней но не намного’,
+      ‘html’: ‘нарисовать что-то при помощи SVG’
+    }
+  }
+ }).done(function(response) {
+   console.log(response); 
+ });
+           
+           
         }   
 
           	return false;
@@ -73,32 +103,3 @@ document.createElement("article");
 document.createElement("section");
 
 
-/*
- * Обработчик для формы обратной связи
- */
-
-
-
-
-
-$('#sendfm').click(function() {
-                                                                                        
-                                                                                        
-      var fio = $("#fio").val();                                                        
-      var email = $("#email").val();                                                    
-      var phone = $("#phone").val();                                                    
-      var city = $("#city").val();                                                      
-      var text = $("#text").val();                                                      
-                                                                                        
-                                                                                        
-   if ( !fio ) { $('#fiospan').show(); } else { $('#fiospan').hide(); }                 
-   if ( !email ) { $('#emailspan').show(); }  else { $('#emailspan').hide();  }         
-   if ( !phone ) { $('#phonespan').show(); }  else { $('#phonespan').hide();  }         
-   if ( !city ) { $('#cityspan').show(); }  else { $('#cityspan').hide();  }            
-   if ( !text ) { $('#textspan').show(); }  else { $('#textspan').hide();  }            
-                                                                                        
-                                                                                        
-  if ( !fio || !email || !phone || !city || !text )  {      return false;  	  }         
-                                                                                        
-                                                                                        
-  });                                                                                   
